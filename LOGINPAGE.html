@@ -1,0 +1,137 @@
+<html>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<head>
+<style>
+body
+{
+background-image: url("https://images.wallpaperscraft.com/image/background_drops_light_circles_blue_83428_1920x1080.jpg");
+background-repeat: no-repeat;
+background-size: 100% 100%;
+}
+
+
+.button
+{
+background-color:red;
+display: inline-block;
+color:white;
+font-size: 26px;
+margin: 8px 4px;
+text-align: center;
+text-decoration:none;
+padding: 25px 39px;
+}
+.div
+{
+position: absolute;
+background-color:pink;
+top:250px;
+    left:600px;
+padding:40px;
+width: 30%;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+border-bottom-left-radius: 5px;
+}
+.button
+{
+background-color:#0A3D62;
+display: inline-block;
+color:white;
+font-size: 16px;
+margin: 4px 2px;
+text-align: center;
+text-decoration:none;
+padding: 15px 32px;
+border: none;
+border: 2px solid #fff;
+border-radius: 5%;
+}
+input{
+    border: none; 
+    padding: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+#logo{
+   font-size: 50px;
+   margin-bottom: 20px;
+   color: black;
+}
+#forgotpwd:hover{
+    cursor: pointer;
+}
+</style>
+<script>
+function login()
+{
+var x=document.getElementById("emailaddress").value;
+var y=document.getElementById("password1").value;
+var p=x.indexOf("@");
+var q=x.lastIndexOf(".");
+if(x=="")
+{
+window.alert("EMAIL ADDRESS HAS NOT ENTERED");
+document.getElementById("password1").value="";
+}
+else if(x.length<12)
+{
+window.alert("EMAIL ADDRESS IS TOO SHORT");
+document.getElementById("password1").value="";
+}
+else if(x.length>50)
+{
+window.alert("EMAIL ADDRESS IS TOO LARGE");
+document.getElementById("password1").value="";
+}
+else if(p<1 || (q-p<2))
+{
+window.alert("INCORRECT EMAIL ADDRESS IS ENTERED");
+document.getElementById("password1").value="";
+}
+else if(y=="")
+{
+window.alert("PASSWORD HAS NOT ENTERED");
+document.getElementById("password1").value="";
+}
+else if(y.length<6)
+{
+window.alert("PASSWORD IS TOO SHORT"); 
+document.getElementById("password1").value="";
+}
+else if(y.length>20)
+{
+window.alert("PASSWORD IS TOO LARGE");
+document.getElementById("password1").value="";
+}
+else if((x!="") && (y!="") && (x.length>=12 && x.length<=50)&& (y.length>=6 && y.length<=20)&& (!p<1 || !(q-p<2) ) )
+{
+window.alert("YOU HAVE SUCCESSFULLY LOGGED IN");
+document.getElementById("emailaddress").value="";
+document.getElementById("password1").value="";
+}
+}
+
+function forgotpwd(){
+    if(window.prompt("Enter your email", "")){
+        alert("Reset password link has been sent to your email")
+    }
+}
+</script>
+</head>
+<body text="black">
+<div class="div" align="center">
+    <center><i class="fa fa-user-circle" id="logo"></i></center>
+<form align="center">
+Enter your Email Address: <input type="text" id="emailaddress" placeholder="Enter your Email Address..."><br><br>
+Enter your Password: <input type="password" id="password1" placeholder="Enter your Password...."><br><br>
+<p id="forgotpwd" onclick="forgotpwd()" style="float:left"> Forgot password? </p>
+<button type="button" onclick="login()" class="button">LOGIN</button><br><br>
+Not have an account?<a href="SIGNUPPAGE.html">Sign Up!</a>
+</form>
+</div>
+</body>
+</html>

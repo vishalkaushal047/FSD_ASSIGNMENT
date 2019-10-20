@@ -1,0 +1,184 @@
+<html>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<head>
+<style>
+body
+{
+background-image: url("https://images.wallpaperscraft.com/image/background_drops_light_circles_blue_83428_1920x1080.jpg");
+background-repeat: no-repeat;
+background-size: 100% 100%;
+}
+.div
+{
+    position: absolute;
+background-color:pink;
+top:250px;
+    left:600px;
+padding:40px;
+width: 30%;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+border-bottom-left-radius: 5px;
+}
+
+.button
+{
+background-color:#0A3D62;
+display: inline-block;
+color:white;
+font-size: 16px;
+margin: 4px 2px;
+text-align: center;
+text-decoration:none;
+padding: 15px 32px;
+border: none;
+border: 2px solid #fff;
+border-radius: 5%;
+}
+input{
+    border: none; 
+    padding: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+#logo{
+   font-size: 50px;
+   margin-bottom: 20px;
+   color: black;
+}
+</style>
+
+<script>
+function signup()
+{
+var fname=document.getElementById("firstname").value;
+var lname=document.getElementById("lastname").value;
+var email=document.getElementById("emailaddress").value;
+var pass=document.getElementById("password1").value;
+var pass1=document.getElementById("password2").value;
+var x=email.indexOf("@");
+var y=email.lastIndexOf(".");
+if(fname=="")
+{
+window.alert("FIRST NAME CANNOT BE EMPTY");
+
+}
+
+else if(lname=="")
+{
+window.alert("LAST NAME CANNOT BE EMPTY");
+
+}
+
+else if(email=="")
+{
+window.alert("EMAIL ADDRESS CANNOT BE EMPTY");
+}
+
+else if(pass=="")
+{
+window.alert("PASSWORD CANNOT BE EMPTY");
+}
+
+else if(pass1=="")
+{
+window.alert("CONFIRM PASSSWORD CANNOT BE EMPTY");
+}
+
+else if(fname.length<4)
+{
+window.alert("FIRST NAME IS TOO SHORT");
+
+}
+
+else if(fname.length>30)
+{
+window.alert("FIRST NAME IS TOO LARGE");
+
+}
+
+else if(lname.length<4)
+{
+window.alert("LAST NAME IS TOO SHORT");
+
+}
+
+else if(lname.length>30)
+{
+window.alert("LAST NAME IS TOO LARGE");
+}
+
+else if(email=="")
+{
+window.alert("EMAIL ADDRESS CANNOT BE EMPTY");
+
+}
+
+else if(y<1 || (y-x<2))
+{
+window.alert("EMAIL ADDRESS IS INCORRECT");
+
+}
+
+else if(pass=="")
+{
+window.alert("PASSWORD CANNOT BE EMPTY");
+
+}
+
+else if(pass.length<6)
+{
+window.alert("PASSWORD IS TOO SHORT");
+
+}
+
+else if(pass.length>20)
+{
+window.alert("PASSWORD IS TOO LONG");
+
+}
+
+else if(pass1=="")
+{
+window.alert("CONFIRM PASSWORD CANNOT BE EMPTY");
+
+}
+
+else if(pass!=pass1)
+{
+window.alert("CONFIRM PASSWORD DOES NOT MATCHES WITH THE PASSWORD ENTERED BY YOU");
+
+}
+
+else if( fname!="" && lname!="" && fname.length>=6 && lname.length>=6 && fname.length<=20 && lname.length<=20 && (y>=1|| (y-x>=2)) && pass.length>=6 && pass.length<=20 && pass!="" && pass1!="" && pass==pass1)
+{
+window.alert("YOU HAVE SUCCESSFULLY SIGNED UP");
+document.getElementById("firstname").value="";
+document.getElementById("lastname").value="";
+document.getElementById("emailaddress").value="";
+document.getElementById("password1").value="";
+document.getElementById("password2").value="";
+	
+}
+}
+</script>
+</head>
+
+<body text="black">
+<div class="div" align="center">
+    <center><i class="fa fa-user-circle" id="logo"></i></center>
+<form align="center">
+Enter your First Name: <input type="text" id="firstname" placeholder="Enter your First Name...."><br><br>
+Enter your Last Name: <input type="text"  id="lastname" placeholder="Enter your Last Name...."><br><br>
+Enter your Email Address: <input type="text" id="emailaddress" placeholder="Enter your Email Address..."><br><br>
+Enter your Password: <input type="password" id="password1" placeholder="Enter your Password...."><br><br>
+Enter your Confirm Password: <input type="password" id="password2" placeholder="Renter your Password...."><br><br>
+<button type="button" onclick="signup()" class="button">SIGNUP</button><br><br>
+Already have an account?<a href="LOGINPAGE.html">Sign in!</a>
+</form>
+</div>
+</body>
+</html>
